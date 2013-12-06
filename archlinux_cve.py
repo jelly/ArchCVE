@@ -57,13 +57,13 @@ for entry in root:
             for pkg in results:
                 ver = pkg.version.split('-')[0]
                 if ver == version:
-                    affectedpkgs += "{}/{} {} - CVE program: {} version: {}\n".format(pkg.db.name, pkg.name, pkg.version, program, version)
+                    affectedpkgs += "{}/{} {} - CVE program: {} version: {}\n".format(
+                                    pkg.db.name, pkg.name, pkg.version, program, version)
                     found = True
-            
-                    
 
     if found:
-        print ("\033[1;31mCVE id: http://cve.mitre.org/cgi-bin/cvename.cgi?name={}\033[1;m".format(entry.attrib['id']))
+        print ("\033[1;31mCVE id: http://cve.mitre.org/cgi-bin/cvename.cgi?name={}"
+               "\033[1;m".format(entry.attrib['id']))
         print ("Possible affected programs")
         print (affectedpkgs) 
         print("\033[1;31mSUMMARY:\033[1;m")
