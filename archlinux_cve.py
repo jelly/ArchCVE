@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 from lxml import etree
-import pyalpm
-from pycman import config
+import pycman
 
 # Setup pyalpm stuff
 repos = ['core','community','extra','testing','multilib','multilib-testing','community-testing']
 configpath  = '/etc/pacman.conf'
 handle = False
-handle = config.init_with_config(configpath)
+handle = pycman.config.init_with_config(configpath)
 syncdbs = handle.get_syncdbs()
 
 # search helper 
